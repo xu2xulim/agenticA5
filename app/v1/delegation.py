@@ -8,6 +8,10 @@ from pydantic import BaseModel, Field
 from pydantic_ai import Agent, RunContext #, Tool, ModelRetry,
 from pydantic_ai.models.openai import OpenAIModel
 
+
+
+ 
+
 import os
 import httpx
 import json
@@ -16,6 +20,10 @@ from app.dependencies.common import instantTrello, instantHandler, to_markdown
 from app.core.config import settings
 
 from dataclasses import dataclass
+# instrumentation with logfire
+import logfire
+logfire.configure()  
+logfire.instrument_asyncpg() 
 
 router = APIRouter()
 

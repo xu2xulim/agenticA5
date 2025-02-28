@@ -8,6 +8,7 @@ python-dotenv>=1.0.0
 
 pydantic-settings==2.2.1
 typing_extensions>=4.11.0
+logfire[fastapi]
 
 uvicorn
 httpx
