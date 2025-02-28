@@ -29,7 +29,7 @@ html = """
     <button onclick="connectWebSocket()">Connect WebSocket</button>
     <script>
         function connectWebSocket() {
-            const socket = new WebSocket('https://{hostname}/v1/socket/ws);
+            const socket = new WebSocket('https://{hostname}/v1/socket/ws');
             socket.onmessage = function(event) {
                 alert(`Message from server: ${event.data}`);
             };
