@@ -12,7 +12,8 @@ class Settings(BaseSettings):
     HOSTNAME:str
     CUSTOM_INTEGRATION_KEY:str #GHL custom integration key
     LOCATION_ID:str #GHL location id
-    
+    LOGFIRE_TOKEN: str
+
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"

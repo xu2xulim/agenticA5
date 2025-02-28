@@ -8,9 +8,7 @@ from pydantic import BaseModel, Field
 from pydantic_ai import Agent, RunContext #, Tool, ModelRetry,
 from pydantic_ai.models.openai import OpenAIModel
 
-
-
- 
+import logfire
 
 import os
 import httpx
@@ -20,12 +18,11 @@ from app.dependencies.common import instantTrello, instantHandler, to_markdown
 from app.core.config import settings
 
 from dataclasses import dataclass
-# instrumentation with logfire
-import logfire
-logfire.configure()  
-logfire.instrument_asyncpg() 
 
 router = APIRouter()
+# instrumentation with logfire
+logfire.configure()
+logfire.instrument_fastapi(router)
 
 model = OpenAIModel("gpt-4o")
 
