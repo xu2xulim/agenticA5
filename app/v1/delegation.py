@@ -8,8 +8,6 @@ from pydantic import BaseModel, Field
 from pydantic_ai import Agent, RunContext #, Tool, ModelRetry,
 from pydantic_ai.models.openai import OpenAIModel
 
-import logfire
-
 import os
 import httpx
 import json
@@ -20,12 +18,8 @@ from app.core.config import settings
 from dataclasses import dataclass
 
 router = APIRouter()
-# instrumentation with logfire
-logfire.configure()
-logfire.instrument_fastapi(router)
 
 model = OpenAIModel("gpt-4o")
-
 
 @dataclass
 class ClientAndKey:  
