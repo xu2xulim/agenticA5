@@ -70,7 +70,7 @@ html_input = """
         let socket;
 
         function connectWebSocket() {
-            socket = new WebSocket('https://${hostname}/v1/socket/ws_input');
+            socket = new WebSocket('https://{hostname}/v1/socket/ws_input');
 
             socket.onmessage = function(event) {
                 const responseDiv = document.getElementById("response");
