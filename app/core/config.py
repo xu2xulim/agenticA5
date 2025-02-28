@@ -8,6 +8,8 @@ class Settings(BaseSettings):
     # Instant
     INSTANT_APP_ID: str
     INSTANT_APP_SECRET: str
+    # App
+    HOSTNAME:str
 
     class Config:
         env_file = ".env"

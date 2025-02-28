@@ -29,7 +29,7 @@ html = """
     <button onclick="connectWebSocket()">Connect WebSocket</button>
     <script>
         function connectWebSocket() {
-            const socket = new WebSocket("https://aiagent-w0r4nj3g.b4a.run/v1/socket/ws");
+            const socket = new WebSocket(f"https://{settings.HOSTNAME}/v1/socket/ws");
             socket.onmessage = function(event) {
                 alert(`Message from server: ${event.data}`);
             };
@@ -70,7 +70,7 @@ html_input = """
         let socket;
 
         function connectWebSocket() {
-            socket = new WebSocket("https://aiagent-w0r4nj3g.b4a.run/v1/socket/ws_input");
+            socket = new WebSocket(f"https://{settings.HOSTNAME}/v1/socket/ws_input");
 
             socket.onmessage = function(event) {
                 const responseDiv = document.getElementById("response");
