@@ -29,7 +29,7 @@ html = """
     <button onclick="connectWebSocket()">Connect WebSocket</button>
     <script>
         function connectWebSocket() {
-            const socket = new WebSocket(`https://${settings.HOSTNAME}/v1/socket/ws`);
+            const socket = new WebSocket('https://{hostname}/v1/socket/ws);
             socket.onmessage = function(event) {
                 alert(`Message from server: ${event.data}`);
             };
@@ -40,7 +40,7 @@ html = """
     </script>
 </body>
 </html>
-"""
+""".format(hostname=settings.HOSTNAME)
 
 @router.get("/socket/html")
 async def get():
@@ -70,7 +70,7 @@ html_input = """
         let socket;
 
         function connectWebSocket() {
-            socket = new WebSocket(`https://${settings.HOSTNAME}/v1/socket/ws_input`);
+            socket = new WebSocket('https://${hostname}/v1/socket/ws_input');
 
             socket.onmessage = function(event) {
                 const responseDiv = document.getElementById("response");
@@ -106,7 +106,7 @@ html_input = """
     </script>
 </body>
 </html>
-"""
+""".format(hostname=settings.HOSTNAME)
 
 class UserPreferences(BaseModel):
     summary: list[str] = Field(description="The summary of user preferences")
