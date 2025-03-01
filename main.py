@@ -162,12 +162,13 @@ async def execute_task(task_id: int, task: str):
         # Initialize a new browser instance for this task
         logger.info(f"Task ID {task_id}: Initializing new browser instance.")
         browser = Browser(
-            config=BrowserConfig(
-                chrome_instance_path=get_chrome_path(),  # Update if different
-                disable_security=True,
-                headless=False,  # Set to True for headless mode
+            config=BrowserConfig(headless=True)
+            #config=BrowserConfig(
+                #chrome_instance_path=get_chrome_path(),  # Update if different
+                #disable_security=True,
+                #headless=False,  # Set to True for headless mode
                 # Removed 'remote_debugging_port' as it caused issues
-            )
+            #)
         )
         logger.info(f"Task ID {task_id}: Browser initialized successfully.")
         
