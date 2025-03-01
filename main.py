@@ -304,7 +304,9 @@ def read_root():
 # ----------------------------
 # 12. Entry Point
 # ----------------------------
+"""
 if __name__ == "__main__":
     import uvicorn
 
     uvicorn.run("main:app", host="127.0.0.1", port=8888, reload=True, workers=1)
+"""

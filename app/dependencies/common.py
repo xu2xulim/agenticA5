@@ -6,9 +6,9 @@ from pydantic import BaseModel
 
 import datetime
 
-import trello
+#import trello
 import httpx
-
+"""
 def to_markdown(data, indent=0):
     markdown = ""
     if isinstance(data, BaseModel):
@@ -73,7 +73,7 @@ async def instantTrello(case, data):
 
     else:
         return JSONResponse(content={'message' : f'Invalid Request'}, status_code=400)
-
+"""
 async def instantHandler(case, collection, id, data):
 
     instant_app_headers = {
